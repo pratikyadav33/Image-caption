@@ -11,13 +11,14 @@ from keras.applications.inception_v3 import InceptionV3, preprocess_input
 import pickle
 import string
 import streamlit as st
+import tensorflow as tf
 
 st.title("Image Caption")
 st.text("Tell Caption Tell Caption Tell Caption Tell Caption")
 
 def load_model():
 
-  new_model=load_model("my_model.h5")
+  new_model=tf.keras.models.load_model.load_model("my_model.h5")
 
 
   w2i_file=open("wordtoix.p","rb")
