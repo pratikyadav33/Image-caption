@@ -10,7 +10,7 @@ from keras.applications.inception_v3 import InceptionV3, preprocess_input
 
 import pickle
 import requests
-import tensorflow as tf
+
 import string
 import streamlit as st
 
@@ -19,7 +19,7 @@ st.text("Tell Caption Tell Caption Tell Caption Tell Caption")
 
 def load_model():
 
-  new_model=tf.keras.models.load_model("my_model.h5")
+  new_model=load_model("my_model.h5")
 
 
   w2i_file=open("wordtoix.p","rb")
@@ -82,5 +82,3 @@ else:
   img = pic.reshape(1, 2048)
   final_caption = (greedy_search(img))
   st.write(final_caption)
-if __name__=='__main__':
-  main()
