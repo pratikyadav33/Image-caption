@@ -81,3 +81,6 @@ else:
   img = pic.reshape(1, 2048)
   final_caption = (greedy_search(img))
   st.write(final_caption)
+  
+if __name__ == "__main__":
+  main()
