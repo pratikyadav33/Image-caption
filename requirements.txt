@@ -1,3 +1,2 @@
-tensorflow==1.13.1
 streamlit
 keras==2.3.1
