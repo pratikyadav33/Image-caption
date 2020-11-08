@@ -1,4 +1,3 @@
-pickle
 requests
 tensorflow
 string
