@@ -18,7 +18,8 @@ st.text("Tell Caption Tell Caption Tell Caption Tell Caption")
 
 def load_model():
 
-  new_model=load_model("my_model.h5")
+  new_model=tf.keras.models.load_model("my_model.h5")
+
 
 
   w2i_file=open("wordtoix.p","rb")
