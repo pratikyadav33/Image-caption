@@ -9,8 +9,6 @@ from keras.models import load_model
 from keras.applications.inception_v3 import InceptionV3, preprocess_input
 
 import pickle
-import requests
-
 import string
 import streamlit as st
 
