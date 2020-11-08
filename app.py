@@ -19,13 +19,13 @@ st.text("Tell Caption Tell Caption Tell Caption Tell Caption")
 
 def load_model():
 
-  new_model=tf.keras.models.load_model("./Image-caption/my_model.h5")
+  new_model=tf.keras.models.load_model("../Image-caption/my_model.h5")
 
 
-  w2i_file=open("./Image-caption/wordtoix.p","rb")
+  w2i_file=open("../Image-caption/wordtoix.p","rb")
   wordtoix = pickle.load(w2i_file)
 
-  i2w_file=open("./Image-caption/ixtoword.p","rb")
+  i2w_file=open("../Image-caption/ixtoword.p","rb")
   ixtoword = pickle.load(i2w_file)
 
   base_model = InceptionV3(weights = 'imagenet')
