@@ -16,12 +16,10 @@ import tensorflow as tf
 st.title("Image Caption")
 st.text("Tell Caption Tell Caption Tell Caption Tell Caption")
 
+new_model=tf.keras.models.load_model("my_model.h5")
+
 def load_model():
-
-  new_model=tf.keras.models.load_model("my_model.h5")
-
-
-
+  
   w2i_file=open("wordtoix.p","rb")
   wordtoix = pickle.load(w2i_file)
 
