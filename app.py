@@ -16,14 +16,14 @@ import tensorflow as tf
 st.title("Image Caption")
 st.text("Tell Caption Tell Caption Tell Caption Tell Caption")
 
-new_model=tf.keras.models.load_model("my_model.h5")
+new_model=tf.keras.models.load_model("./my_model.h5")
 
 def load_model():
   
-  w2i_file=open("wordtoix.p","rb")
+  w2i_file=open("./wordtoix.p","rb")
   wordtoix = pickle.load(w2i_file)
 
-  i2w_file=open("ixtoword.p","rb")
+  i2w_file=open("./ixtoword.p","rb")
   ixtoword = pickle.load(i2w_file)
 
   base_model = InceptionV3(weights = 'imagenet')
