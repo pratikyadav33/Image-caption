@@ -1,4 +1,7 @@
-tenserflow-cpu==2.3.0
-Keras-Preprocessing==1.1.2
-gevent
-flask
+pickle
+requests
+tensorflow
+string
+streamlit
+PIL
+keras

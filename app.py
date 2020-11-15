@@ -1,7 +1,9 @@
 import os 
-import pickle    
-import requests
+import pickle
+import tensorflow as tf
 import numpy as np
+    
+import requests
 from keras.preprocessing.sequence import pad_sequences
 from keras.models import load_model
 from keras.applications.inception_v3 import InceptionV3, preprocess_input
@@ -74,7 +76,7 @@ def index():
 def upload():
     if request.method == 'POST':
         f = request.files['file']
-        basepath = 'images'
+        basepath = '/images'
         file_path = os.path.join(
             basepath, 'uploads', secure_filename(f.filename))
         f.save(file_path)
