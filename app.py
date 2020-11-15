@@ -75,7 +75,7 @@ def index():
 def upload():
     if request.method == 'POST':
         f = request.files['file']
-        basepath = '/images'
+        basepath = ''
         file_path = os.path.join(
             basepath, 'uploads', secure_filename(f.filename))
         f.save(file_path)
