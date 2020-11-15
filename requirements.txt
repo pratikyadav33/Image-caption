@@ -1,3 +1,4 @@
-streamlit
-keras==2.2.4 
-tensorflow-cpu==2.3.1
+Keras==2.4.3
+Keras-Preprocessing==1.1.2
+gevent
+flask
