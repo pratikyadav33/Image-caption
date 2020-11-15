@@ -1,6 +1,7 @@
 import os 
 import pickle    
 import requests
+import numpy as np
 from keras.preprocessing.sequence import pad_sequences
 from keras.models import load_model
 from keras.applications.inception_v3 import InceptionV3, preprocess_input
