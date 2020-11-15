@@ -1,5 +1,4 @@
-Keras==2.4.3
+tenserflow-cpu==2.3.0
 Keras-Preprocessing==1.1.2
 gevent
 flask
-tenserflow-cpu==2.3.0
