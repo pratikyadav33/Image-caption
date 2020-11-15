@@ -1,6 +1,5 @@
 import os 
 import pickle
-import tensorflow as tf
 import numpy as np
     
 import requests
