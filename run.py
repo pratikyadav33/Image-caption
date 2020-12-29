@@ -1,5 +1,6 @@
 import os 
 import pickle
+import tensorflow as tf
 import numpy as np
     
 import requests
@@ -11,18 +12,20 @@ from keras.preprocessing.image import load_img, img_to_array
 from werkzeug.utils import secure_filename
 from gevent.pywsgi import WSGIServer
 from flask import Flask, redirect, url_for, request, render_template
+from flask_ngrok import run_with_ngrok
 
 
 app = Flask(__name__)
+run_with_ngrok(app)
 
 #Loadning Necessary Files And Documents
 
-new_model= load_model("my_model.h5")
-
-w2i_file = open("wordtoix.p","rb")
+#new_model= load_model("/content/gdrive/My Drive/Colab Notebooks/my_model.h5")
+new_model= load_model("/content/gdrive/My Drive/Colab Notebooks/my-cap.h5")
+w2i_file = open("/content/gdrive/My Drive/Colab Notebooks/wordtoix.p","rb")
 wordtoix = pickle.load(w2i_file)
 
-i2w_file=open("ixtoword.p","rb")
+i2w_file=open("/content/gdrive/My Drive/Colab Notebooks/ixtoword.p","rb")
 ixtoword = pickle.load(i2w_file)
 
 base_model = InceptionV3(weights = 'imagenet')
@@ -34,7 +37,6 @@ max_length = 34
 print('Model loaded')
 
 def preprocess_img(img_path):
-    #inception v3 excepts img in 299*299
     img = load_img(img_path, target_size = (299, 299))
     x = img_to_array(img)
     # Add one more dimension
@@ -66,6 +68,7 @@ def greedy_search(pic):
     return final
 
 app = Flask(__name__)
+run_with_ngrok(app)
 
 @app.route('/',methods=["GET"])
 def index():
@@ -75,7 +78,7 @@ def index():
 def upload():
     if request.method == 'POST':
         f = request.files['file']
-        basepath = ''
+        basepath = '/content/gdrive/My Drive/Colab Notebooks/'
         file_path = os.path.join(
             basepath, 'uploads', secure_filename(f.filename))
         f.save(file_path)
