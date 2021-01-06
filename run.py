@@ -19,13 +19,11 @@ app = Flask(__name__)
 run_with_ngrok(app)
 
 #Loadning Necessary Files And Documents
-
-#new_model= load_model("/content/gdrive/My Drive/Colab Notebooks/my_model.h5")
-new_model= load_model("/content/gdrive/My Drive/Colab Notebooks/my-cap.h5")
-w2i_file = open("/content/gdrive/My Drive/Colab Notebooks/wordtoix.p","rb")
+new_model= load_model("/my-cap.h5")
+w2i_file = open("/wordtoix.p","rb")
 wordtoix = pickle.load(w2i_file)
 
-i2w_file=open("/content/gdrive/My Drive/Colab Notebooks/ixtoword.p","rb")
+i2w_file=open("/ixtoword.p","rb")
 ixtoword = pickle.load(i2w_file)
 
 base_model = InceptionV3(weights = 'imagenet')
@@ -78,7 +76,7 @@ def index():
 def upload():
     if request.method == 'POST':
         f = request.files['file']
-        basepath = '/content/gdrive/My Drive/Colab Notebooks/'
+        basepath = '/'
         file_path = os.path.join(
             basepath, 'uploads', secure_filename(f.filename))
         f.save(file_path)
