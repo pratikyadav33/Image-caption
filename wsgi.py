@@ -17,11 +17,11 @@ from flask import Flask, redirect, url_for, request, render_template
 app = Flask(__name__)
 
 #Loadning Necessary Files And Documents
-new_model= load_model("/my-cap.h5")
-w2i_file = open("/wordtoix.p","rb")
+new_model= load_model("my_model.h5")
+w2i_file = open("wordtoix.p","rb")
 wordtoix = pickle.load(w2i_file)
 
-i2w_file=open("/ixtoword.p","rb")
+i2w_file=open("ixtoword.p","rb")
 ixtoword = pickle.load(i2w_file)
 
 base_model = InceptionV3(weights = 'imagenet')
