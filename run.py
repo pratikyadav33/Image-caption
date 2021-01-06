@@ -66,7 +66,7 @@ def greedy_search(pic):
 app = Flask(__name__)
 run_with_ngrok(app)
 
-@app.route('/',methods=["GET"])
+@app.route()
 def index():
     return render_template('index.html')
 
