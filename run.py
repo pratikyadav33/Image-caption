@@ -11,7 +11,6 @@ from keras.models import Model
 from keras.preprocessing.image import load_img, img_to_array
 from werkzeug.utils import secure_filename
 from gevent.pywsgi import WSGIServer
-from flask import Flask, redirect, url_for, request, render_template
 
 
 app = Flask(__name__)
@@ -64,7 +63,6 @@ def greedy_search(pic):
     return final
 
 app = Flask(__name__)
-run_with_ngrok(app)
 
 @app.route()
 def index():
