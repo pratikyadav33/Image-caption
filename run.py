@@ -12,11 +12,9 @@ from keras.preprocessing.image import load_img, img_to_array
 from werkzeug.utils import secure_filename
 from gevent.pywsgi import WSGIServer
 from flask import Flask, redirect, url_for, request, render_template
-from flask_ngrok import run_with_ngrok
 
 
 app = Flask(__name__)
-run_with_ngrok(app)
 
 #Loadning Necessary Files And Documents
 new_model= load_model("/my-cap.h5")
