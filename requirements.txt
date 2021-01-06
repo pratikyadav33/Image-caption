@@ -1,3 +1,6 @@
 tensorflow
 flask
 gunicorn
+gevent
+pickle
+requests
