@@ -1,1 +1,1 @@
-web: gunicorn Image-caption.wsgi
+web: gunicorn run:app
