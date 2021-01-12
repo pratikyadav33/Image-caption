@@ -67,6 +67,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return 'Hello World!'
+    print("HELLO")
     #return render_template('index.html')
 
 @app.route('/predict',methods=["GET",'POST'])
