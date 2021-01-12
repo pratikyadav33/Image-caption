@@ -64,9 +64,10 @@ def greedy_search(pic):
 
 app = Flask(__name__)
 
-@app.route()
+@app.route('/')
 def index():
-    return render_template('index.html')
+    return 'Hello World!'
+    #return render_template('index.html')
 
 @app.route('/predict',methods=["GET",'POST'])
 def upload():
